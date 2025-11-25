@@ -310,3 +310,41 @@ export const control = <svg width="64" height="64" viewBox="0 0 64 64" fill="non
         </clipPath>
     </defs>
 </svg>
+
+
+export const direction = <svg width="227" height="310" viewBox="0 0 227 310" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7.32947 0.346436L3.05404 37.1151C2.62859 40.7739 4.7564 44.2504 8.20821 45.536L218.255 123.77C221.564 125.003 223.673 128.259 223.446 131.783L216.995 231.56C216.658 236.773 211.496 240.269 206.53 238.649L104.603 205.393C100.96 204.205 96.9864 205.766 95.1269 209.117L40.3295 307.846" stroke="url(#paint0_linear_601_2482)" stroke-width="6" />
+    <defs>
+        <linearGradient id="paint0_linear_601_2482" x1="48.8295" y1="330.847" x2="4.82947" y2="0.346451" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#100A55" />
+            <stop offset="1" stop-color="#100A55" stop-opacity="0" />
+        </linearGradient>
+    </defs>
+</svg>
+export const rent = <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16.4917 12.4416C14.775 14.1499 12.3167 14.6749 10.1583 13.9999L6.23334 17.9166C5.95001 18.2083 5.39168 18.3833 4.99168 18.3249L3.17501 18.0749C2.57501 17.9916 2.01668 17.4249 1.92501 16.8249L1.67501 15.0083C1.61668 14.6083 1.80834 14.0499 2.08334 13.7666L6.00001 9.84994C5.33334 7.68327 5.85001 5.22494 7.56668 3.5166C10.025 1.05827 14.0167 1.05827 16.4833 3.5166C18.95 5.97494 18.95 9.98327 16.4917 12.4416Z" stroke="#7065F0" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M5.74167 14.575L7.65833 16.4916" stroke="#7065F0" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M12.0833 9.16675C12.7737 9.16675 13.3333 8.6071 13.3333 7.91675C13.3333 7.22639 12.7737 6.66675 12.0833 6.66675C11.393 6.66675 10.8333 7.22639 10.8333 7.91675C10.8333 8.6071 11.393 9.16675 12.0833 9.16675Z" stroke="#7065F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+export const buy = <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M14.1667 17.0834H5.83332C3.33332 17.0834 1.66666 15.8334 1.66666 12.9167V7.08341C1.66666 4.16675 3.33332 2.91675 5.83332 2.91675H14.1667C16.6667 2.91675 18.3333 4.16675 18.3333 7.08341V12.9167C18.3333 15.8334 16.6667 17.0834 14.1667 17.0834Z" stroke="#100A55" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="#100A55" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M4.58334 7.91675V12.0834" stroke="#100A55" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M15.4167 7.91675V12.0834" stroke="#100A55" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+export const searchproperty = <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z" stroke="#7065F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M22 22L20 20" stroke="#7065F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+export const beds = <svg width="17" height="12" viewBox="0 0 17 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.8333 4.81667V2.5C15.8333 1.125 14.7083 0 13.3333 0H10C9.35833 0 8.775 0.25 8.33333 0.65C7.89167 0.25 7.30833 0 6.66667 0H3.33333C1.95833 0 0.833333 1.125 0.833333 2.5V4.81667C0.325 5.275 0 5.93333 0 6.66667V11.6667H1.66667V10H15V11.6667H16.6667V6.66667C16.6667 5.93333 16.3417 5.275 15.8333 4.81667ZM10 1.66667H13.3333C13.7917 1.66667 14.1667 2.04167 14.1667 2.5V4.16667H9.16667V2.5C9.16667 2.04167 9.54167 1.66667 10 1.66667ZM2.5 2.5C2.5 2.04167 2.875 1.66667 3.33333 1.66667H6.66667C7.125 1.66667 7.5 2.04167 7.5 2.5V4.16667H2.5V2.5ZM1.66667 8.33334V6.66667C1.66667 6.20833 2.04167 5.83333 2.5 5.83333H14.1667C14.625 5.83333 15 6.20833 15 6.66667V8.33334H1.66667Z" fill="#7065F0" />
+</svg>
+export const bathrooms = <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M15.8333 5.83333H4.16667V3.33333C4.16667 2.41417 4.91417 1.66667 5.83333 1.66667C6.7525 1.66667 7.5 2.41417 7.5 3.33333H9.16667C9.16667 1.495 7.67167 0 5.83333 0C3.995 0 2.5 1.495 2.5 3.33333V5.83333H0.833333C0.61232 5.83333 0.400358 5.92113 0.244078 6.07741C0.0877973 6.23369 0 6.44565 0 6.66667V8.33333C0 10.505 1.395 12.3525 3.33333 13.0417V15.8333H5V13.3333H11.6667V15.8333H13.3333V13.0417C15.2717 12.3525 16.6667 10.505 16.6667 8.33333V6.66667C16.6667 6.44565 16.5789 6.23369 16.4226 6.07741C16.2663 5.92113 16.0543 5.83333 15.8333 5.83333ZM15 8.33333C15 10.1717 13.505 11.6667 11.6667 11.6667H5C3.16167 11.6667 1.66667 10.1717 1.66667 8.33333V7.5H15V8.33333Z" fill="#7065F0" />
+</svg>
+export const sizes = <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6.58148 14.2937L1.20631 8.91852C0.597898 8.31011 0.597898 7.18989 1.20631 6.58148L6.58148 1.20631C7.18989 0.597898 8.31011 0.597898 8.91852 1.20631L14.2937 6.58148C14.9021 7.18989 14.9021 8.31011 14.2937 8.91852L8.91852 14.2937C8.31011 14.9021 7.18989 14.9021 6.58148 14.2937V14.2937Z" stroke="#7065F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+
+
+

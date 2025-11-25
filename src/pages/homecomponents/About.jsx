@@ -9,7 +9,7 @@ function About() {
                 <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
 
                     {/* LEFT LARGE CARD  */}
-                    <div class="bg-linear-to-b from-[#E0DEF7] to-[#E0DEF700] border-[1px] border-[#E0DEF7] rounded-2xl overflow-hidden shadow-sm max-w-[416px] ">
+                    <div class="bg-linear-to-b from-[#E0DEF7] to-[#E0DEF700] border border-[#E0DEF7] rounded-2xl overflow-hidden shadow-sm max-w-[416px] ">
                         <div className=' pt-8 md:px-10 px-6 flex flex-col gap-4'>
                             <h1 class="text-[32px] font-bold text-[#100A55] md:leading-[120%] leading-[90%]">
                                 The new way to find <br /> your new home
@@ -19,7 +19,7 @@ function About() {
                                 Find your dream place to live in with more than 10k+ properties listed.
                             </p>
 
-                            <Link to="/properties" className="w-fit bg-[#100A55] text-[14px] text-white px-[16px] py-[10px] rounded-xl font-medium border-none">
+                            <Link to="/properties" className="w-fit bg-[#100A55] text-[14px] text-white px-4 py-2.5 rounded-xl font-medium border-none">
                                 Browse Properties
                             </Link>
                         </div>

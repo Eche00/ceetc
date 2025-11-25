@@ -3,7 +3,7 @@ import React from 'react'
 function Testimonial() {
     return (
         <div>
-            <main className="w-full bg-gradient-to-b from-[#F7F8FC] to-white py-20 flex flex-col items-center text-center px-4">
+            <main className="w-full bg-linear-to-b from-[#F7F8FC] to-white py-20 flex flex-col items-center text-center px-4">
                 <h2 className="text-3xl font-bold text-gray-900">Testimonials</h2>
                 <p className="text-gray-500 mt-2 max-w-xl">
                     See why users rely on our escrow platform every day
@@ -47,7 +47,7 @@ function Testimonial() {
 
                 <h2 className="text-[40px] font-bold mt-2">Contact support</h2>
 
-                <p className="text-[#D3D5DA] text-[16px] font-[400] mt-2 max-w-md">
+                <p className="text-[#D3D5DA] text-[16px] font-normal mt-2 max-w-md">
                     Encounter any issue? feel free to contact our support for help. <br /> No Spam.
                 </p>
 
@@ -59,7 +59,7 @@ function Testimonial() {
                     />
                     <button
                         type="submit"
-                        className="sm:w-fit w-full px-[40px] py-[12px] bg-[#7065F0] text-white text-[12px] font-[700] rounded-[8px] hover:opacity-90 transition"
+                        className="sm:w-fit w-full px-10 py-3 bg-[#7065F0] text-white text-[12px] font-bold rounded-lg hover:opacity-90 transition"
                     >
                         Submit
                     </button>

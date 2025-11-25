@@ -11,7 +11,7 @@ function Hero() {
         <section className='md:max-w-[544px] w-[90%] md:mx-0 mx-auto flex flex-col gap-5 '>
           <div className='flex flex-col gap-8 text-[#000929]  font-bold'>
             <h1 className='text-[#000929] md:text-[64px] text-[38px] md:text-start text-center font-bold leading-[110%] font-sans'>Real-estate marketplace, with escrow-backed.</h1>
-            <h3 className='md:text-[20px] text-[16px] font-[400] md:text-start text-center '>Our platform is an all-in-one real-estate marketplace. Buy, sell, or rent with escrow-backed security.</h3>
+            <h3 className='md:text-[20px] text-[16px] font-normal md:text-start text-center '>Our platform is an all-in-one real-estate marketplace. Buy, sell, or rent with escrow-backed security.</h3>
           </div>
 
           {/* category and search box */}
@@ -20,7 +20,6 @@ function Hero() {
             <div class="flex justify-between text-sm font-medium text-gray-600 px-2">
               <button class="flex-1 text-[#7065F0] border-b-2 border-[#7065F0] pb-1">Rent</button>
               <button class="flex-1 pb-1">Buy</button>
-              <button class="flex-1 pb-1">Sell</button>
             </div>
 
 
@@ -28,7 +27,7 @@ function Hero() {
               <input
                 type="text"
                 placeholder="Search location"
-                class="flex-1 px-3 py-3 text-gray-500 bg-white border border-gray-300 rounded-xl focus:outline-none min-w-[80px]"
+                class="flex-1 px-3 py-3 text-gray-500 bg-white border border-gray-300 rounded-xl focus:outline-none min-w-20"
               />
 
               <button class="w-12 h-12 bg-[#7065F0] text-white rounded-xl flex items-center justify-center border-none">
@@ -38,18 +37,18 @@ function Hero() {
 
           </div>
           {/* info  */}
-          <section className='flex items-center md:gap-[80px] gap-[10px] md:mx-0 mx-auto'>
+          <section className='flex items-center md:gap-20 gap-2.5 md:mx-0 mx-auto'>
             {/* properties */}
-            <div className='flex flex-col gap-[24px]'>
+            <div className='flex flex-col gap-6'>
               <span>{properties}</span>
               <p className='text-[#7065F0] md:text-[24px] text-[20px]  font-bold font-sans leading-[90%]'>10K + Properties <br />
                 <span className='text-[#000929] md:text-[16px] text-[14px]  font-bold font-sans'>Ready for occupancy</span>
               </p>
             </div>
             {/* trusted */}
-            <div className='flex flex-col gap-[24px]'>
+            <div className='flex flex-col gap-6'>
               <span>{trusted}</span>
-              <p className='text-[#7065F0] md:text-[24px] text-[20px]  font-bold font-sans leading-[90%]'>10K + Properties <br />
+              <p className='text-[#7065F0] md:text-[24px] text-[20px]  font-bold font-sans leading-[90%]'>3K + Clients <br />
                 <span className='text-[#000929] md:text-[16px] text-[14px]  font-bold font-sans'>Trusts in our escrow</span>
               </p>
             </div>
