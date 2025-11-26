@@ -5,6 +5,7 @@ import Mobilenav from './Mobilenav';
 import { Close } from '@mui/icons-material';
 
 function Header() {
+    const [nav, setNav] = useState(false);
 
     return (
         <div className='fixed top-0 left-0 w-full bg-[#FFFFFF66] z-50'>
