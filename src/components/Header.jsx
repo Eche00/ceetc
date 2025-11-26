@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom'
 import DragHandleIcon from '@mui/icons-material/DragHandle';
 import Mobilenav from './Mobilenav';
+import { Close } from '@mui/icons-material';
 
 function Header() {
     const [nav, setNav] = useState(false);
@@ -29,7 +30,7 @@ function Header() {
 
                 {/* mobile nav and Auth buttons */}
                 <section className='flex md:hidden items-center gap-4 w-fit' onClick={() => setNav(!nav)}>
-                    <DragHandleIcon fontSize='large' />
+                    {nav ? <Close fontSize='large' /> : <DragHandleIcon fontSize='large' />}
                 </section>
                 {nav && <Mobilenav />}
             </div>

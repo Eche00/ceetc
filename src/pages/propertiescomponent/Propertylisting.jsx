@@ -1,5 +1,5 @@
 import React from 'react'
-import { bathrooms, beds } from '../../utils/svg'
+import { bathrooms, beds, sizes } from '../../utils/svg'
 
 function Propertylisting() {
     const properties = [
@@ -19,7 +19,7 @@ function Propertylisting() {
                     <div className='w-full border-t-[1.5px] border-[#F0EFFB] pt-4 flex flex-wrap gap-2 items-center justify-between'>
                         <span className='flex items-center gap-2 text-gray-600 text-[14px] font-normal'>{beds} {property.bed} Beds</span>
                         <span className='flex items-center gap-2 text-gray-600 text-[14px] font-normal'>{bathrooms}{property.bathroom} Bathrooms</span>
-                        <span className='flex items-center gap-2 text-gray-600 text-[14px] font-normal'>{beds} {property.size}</span>
+                        <span className='flex items-center gap-2 text-gray-600 text-[14px] font-normal'>{sizes} {property.size}</span>
                     </div>
                 </section>
             </div>)}
