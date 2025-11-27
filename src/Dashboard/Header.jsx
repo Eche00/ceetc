@@ -9,7 +9,7 @@ function Header({ nav, setNav }) {
     const location = useLocation();
 
     return (
-        <div className="bg-[#FFFFFF] py-1.5 px-4 flex md:flex-row flex-col-reverse md:items-center justify-between ">
+        <div className="mm:sticky fixed top-0 left-0 w-full bg-[#FFFFFF] py-1.5 px-4 flex md:flex-row flex-col-reverse md:items-center justify-between ">
             {/* left section (search input)  */}
             <section className="py-2 px-5 shadow-[0px_0px_0px_1px_#E5E5E5,0px_4px_8px_-5px_#00000026] rounded-full ">
                 {location.pathname.replace('/dashboard/', '').toLocaleUpperCase() || "DASHBOARD"}

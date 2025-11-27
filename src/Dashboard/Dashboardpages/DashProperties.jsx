@@ -1,8 +1,11 @@
-import React from 'react'
+
+import Listing from '../../pages/propertiescomponent/Listing'
 
 function DashProperties() {
     return (
-        <div>DashProperties</div>
+        <div>
+            <Listing />
+        </div>
     )
 }
 
