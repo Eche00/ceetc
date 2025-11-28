@@ -101,23 +101,6 @@ function Sidebar() {
                             <ManageHistoryIcon /> Escrow Management
                         </NavLink>
                         <NavLink
-                            to="/dashboard/property-management"
-                            className={({ isActive }) =>
-                                isActive
-                                    ? " mm:text-[16px] text-[12px] bg-[#7065F0] font-semibold  flex items-center mm:gap-3 gap-1 text-[#FFFFFF] py-2 px-3 shadow-[0_0_0_1px_#E5E5E5,0_4px_8px_-5px_rgba(0,0,0,0.15)] rounded-lg"
-                                    : " mm:text-[16px] text-[12px] text-gray-600 hover:text-gray-800 font-medium  flex items-center mm:gap-3 gap-1 rounded-lg py-2 px-3  "
-                            }>
-                            <RealEstateAgentIcon />
-                            Property Management
-                        </NavLink>
-                    </section>
-                    {/* preference   */}
-                    <section className=" flex flex-col gap-1">
-                        <p className=" text-[#0A0A0A] text-3 font-semibold pb-2 px-3">
-                            PREFERENCE
-                        </p>
-                        {/* links  */}
-                        <NavLink
                             to="/dashboard/transactions"
                             className={({ isActive }) =>
                                 isActive
@@ -127,6 +110,24 @@ function Sidebar() {
                             <HistoryIcon />
                             Transactions
                         </NavLink>
+                        {/* <NavLink
+                            to="/dashboard/property-management"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? " mm:text-[16px] text-[12px] bg-[#7065F0] font-semibold  flex items-center mm:gap-3 gap-1 text-[#FFFFFF] py-2 px-3 shadow-[0_0_0_1px_#E5E5E5,0_4px_8px_-5px_rgba(0,0,0,0.15)] rounded-lg"
+                                    : " mm:text-[16px] text-[12px] text-gray-600 hover:text-gray-800 font-medium  flex items-center mm:gap-3 gap-1 rounded-lg py-2 px-3  "
+                            }>
+                            <RealEstateAgentIcon />
+                            Property Management
+                        </NavLink> */}
+                    </section>
+                    {/* preference   */}
+                    <section className=" flex flex-col gap-1">
+                        <p className=" text-[#0A0A0A] text-3 font-semibold pb-2 px-3">
+                            PREFERENCE
+                        </p>
+                        {/* links  */}
+
                         <NavLink
                             to="/dashboard/profile"
                             className={({ isActive }) =>

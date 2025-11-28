@@ -3,7 +3,7 @@ import Listing from '../../pages/propertiescomponent/Listing'
 
 function DashProperties() {
     return (
-        <div>
+        <div className='bg-gray-100'>
             <Listing />
         </div>
     )
