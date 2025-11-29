@@ -15,6 +15,9 @@ import PropertyManagement from './Dashboard/Dashboardpages/PropertyManagement'
 import DashProperties from './Dashboard/Dashboardpages/DashProperties'
 import Transactions from './Dashboard/Dashboardpages/Transactions'
 import Profile from './Dashboard/Dashboardpages/Profile'
+import Signin from './Auth.jsx/Signin'
+import Signup from './Auth.jsx/Signup'
+import Forgotpassword from './Auth.jsx/Forgotpassword'
 
 function App() {
   return (
@@ -39,6 +42,10 @@ function App() {
             <Route path='/dashboard/profile' element={<Profile />} />
 
           </Route>
+          <Route path='/signin' element={<Signin />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/forgotpassword' element={<Forgotpassword />} />
+
         </Routes>
       </Router>
     </div>
