@@ -1,12 +1,28 @@
 import { Menu } from "@mui/material";
 import { useNavBar } from "../utils/navbarcontroller";
-import { Close } from "@mui/icons-material";
+import { Close, Logout } from "@mui/icons-material";
 import DragHandleIcon from '@mui/icons-material/DragHandle';
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../lib/firebase";
 
 function Header({ nav, setNav }) {
     const { navBarController } = useNavBar();
     const location = useLocation();
+    const navigate = useNavigate()
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+        })
+        return () => unsubscribe();
+    }, []);
+    const handleSignOut = () => {
+        signOut(auth)
+        navigate('/signin')
+    }
 
     return (
         <div className="mm:sticky fixed top-0 left-0 w-full bg-[#FFFFFF] py-1.5 px-4 flex md:flex-row flex-col-reverse md:items-center justify-between ">
@@ -16,7 +32,7 @@ function Header({ nav, setNav }) {
             </section>
             {/* right section  */}
             <section className="flex items-center gap-4">
-
+                <span className=" text-red-600" onClick={handleSignOut}><Logout fontSize="small" /></span>
                 <hr className=" h-7 border border-[#E5E5E5] mm:flex hidden" />
                 {/* user info  */}
                 <section className="flex  items-center justify-between w-full py-2.5 px-[3]">
@@ -31,7 +47,7 @@ function Header({ nav, setNav }) {
                             <span className=" text-[#737373]  md:text-[12px] text-[8px] font-normal ">
                                 welcome,
                             </span>
-                            Kristin Watson
+                            {user?.username || 'customer'}
 
                         </p>
                     </div>

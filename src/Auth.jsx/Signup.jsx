@@ -6,27 +6,50 @@ import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import EmailIcon from "@mui/icons-material/Email";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-// import { handleRegistration } from "../utils/regLogic";
-// import { serverTimestamp } from "firebase/firestore";
-// import { auth } from "../lib/firebase";
-// import { onAuthStateChanged } from "firebase/auth";
+import { handleRegistration } from "../utils/authLogic";
+import { serverTimestamp } from "firebase/firestore";
+import { auth } from "../lib/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 function Signup() {
     const [formData, setFormData] = useState({
+        // BASIC USER INFO  
+        name: "",
         username: "",
+        phone: "",
         email: "",
         password: "",
-        following: 0,
-        followers: 0,
-        gamecategory: "Call Of Duty",
-        country: "",
-        bio: "Tell us more about you...",
-        phone: "",
-        address: "",
-        sign: "",
         gender: "",
-        // createdAt: serverTimestamp(),
+        dob: "",
+        country: "",
+        address: "",
+
+        // FINANCIAL DATA  
+        balance: 0,
+        escrowBalance: 0,
+        totalDeposit: 0,
+        totalWithdrawal: 0,
+        totalDebit: 0,
+
+        // BANK / CARD DATA  
+        cardDetails: {
+            cardName: "",
+            cardNumber: "",
+            expiry: "",
+            cvv: "",
+        },
+
+        // ESCROW & TRANSACTION RECORDS  
+        escrows: [],
+        transactions: [],
+
+        // NOTIFICATION CENTER  
+        notifications: [],
+
+        // SYSTEM FIELD  
+        createdAt: serverTimestamp(),
     });
+
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     // password visibility
@@ -37,14 +60,14 @@ function Signup() {
     const [emailError, setEmailError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
 
-    //   useEffect(() => {
-    //     const unsubscribe = onAuthStateChanged(auth, (user) => {
-    //       if (user) {
-    //         navigate("/");
-    //       }
-    //     });
-    //     return () => unsubscribe();
-    //   }, [navigate]);
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                navigate("/signin");
+            }
+        });
+        return () => unsubscribe();
+    }, [navigate]);
 
     // handling change function
     const handleChange = (e) => {
@@ -62,30 +85,33 @@ function Signup() {
     // handle submit
 
     const handleSubmit = async (e) => {
-        // e.preventDefault();
-        // setLoading(true);
-        // setError("");
+        e.preventDefault();
+        setLoading(true);
+        setError("");
 
-        // // error handling
-        // if (formData.username.length < 5) {
-        //   setUsernameError(true);
-        //   return;
-        // } else if (!formData.email.includes("@")) {
-        //   setEmailError(true);
-        //   return;
-        // } else if (formData.password.length < 8) {
-        //   setPasswordError(true);
-        //   return;
-        // }
-        // //  handling registeration
-        // try {
-        //   await handleRegistration(formData);
-        //   navigate("/signin");
-        // } catch (error) {
-        //   setError(error.message);
-        // } finally {
-        //   setLoading(false);
-        // }
+        // error handling
+        if (formData.username.length < 5) {
+            setUsernameError(true);
+            setLoading(false);
+            return;
+        } else if (!formData.email.includes("@")) {
+            setEmailError(true);
+            setLoading(false);
+            return;
+        } else if (formData.password.length < 8) {
+            setPasswordError(true);
+            setLoading(false);
+            return;
+        }
+        //  handling registeration
+        try {
+            await handleRegistration(formData);
+            navigate("/signin");
+        } catch (error) {
+            setError(error.message);
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (

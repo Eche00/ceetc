@@ -4,8 +4,8 @@ import { Link } from "react-router";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import EmailIcon from "@mui/icons-material/Email";
 import { ArrowBackIos } from "@mui/icons-material";
-// import { auth } from "../lib/firebase";
-// import { sendPasswordResetEmail } from "firebase/auth";
+import { auth } from "../lib/firebase";
+import { sendPasswordResetEmail } from "firebase/auth";
 
 function Forgotpassword() {
     const [formData, setFormData] = useState({
@@ -29,29 +29,29 @@ function Forgotpassword() {
     // handle submit
 
     const handleSubmit = async (e) => {
-        // e.preventDefault();
-        // setLoading(true);
+        e.preventDefault();
+        setLoading(true);
 
-        // // error handling
-        // if (!formData.email.includes("@")) {
-        //   setEmailError(true);
-        //   return;
-        // }
-        // try {
-        //   await sendPasswordResetEmail(auth, formData.email);
-        //   setSuccess(true);
-        //   setLoading(false);
-        //   setMessageError(false);
-        // } catch (error) {
-        //   let errorMessage = "An error occurred. Please try again later.";
-        //   if (error.code === "auth/user-not-found") {
-        //     errorMessage = "No user found with this email address.";
-        //   }
-        //   setMessageError(errorMessage);
-        //   console.error("Error resetting password:", error);
-        // } finally {
-        //   setLoading(false);
-        // }
+        // error handling
+        if (!formData.email.includes("@")) {
+            setEmailError(true);
+            return;
+        }
+        try {
+            await sendPasswordResetEmail(auth, formData.email);
+            setSuccess(true);
+            setLoading(false);
+            setMessageError(false);
+        } catch (error) {
+            let errorMessage = "An error occurred. Please try again later.";
+            if (error.code === "auth/user-not-found") {
+                errorMessage = "No user found with this email address.";
+            }
+            setMessageError(errorMessage);
+            console.error("Error resetting password:", error);
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -76,7 +76,7 @@ function Forgotpassword() {
                     {/* form container  */}
                     {success ? (
                         <div className=" flex flex-col gap-2.5 items-center justify-center w-full">
-                            <span className=" border-2 border-blue-600 p-3 flex items-center justify-center rounded-full w-fit">
+                            <span className=" border-2 border-[#7065F0] p-3 flex items-center justify-center rounded-full w-fit">
                                 {" "}
                                 <EmailIcon fontSize="large" />
                             </span>
@@ -118,13 +118,13 @@ function Forgotpassword() {
                             </div>
                             <div className=" w-full flex items-center justify-center flex-col">
                                 <button
-                                    className="bg-blue-600 w-full py-2.5 text-[12px] font-bold text-white rounded-[10px] my-2.5 cursor-pointer"
+                                    className="bg-[#7065F0] w-full py-2.5 text-[12px] font-bold text-white rounded-[10px] my-2.5 cursor-pointer"
                                     type="submit">
                                     {loading ? (
                                         <div role="status">
                                             <svg
                                                 aria-hidden="true"
-                                                className="inline w-4 h-4 text-gray-200 animate-spin  fill-[#1e222b]"
+                                                className="inline w-4 h-4 text-gray-200 animate-spin  fill-[#7065F0]"
                                                 viewBox="0 0 100 101"
                                                 fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">

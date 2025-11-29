@@ -4,8 +4,8 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import EmailIcon from "@mui/icons-material/Email";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-// import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
-// import { auth } from "../lib/firebase";
+import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../lib/firebase";
 
 function Signin() {
     const [formData, setFormData] = useState({
@@ -23,33 +23,33 @@ function Signin() {
     const navigate = useNavigate();
 
     // user
-    // useEffect(() => {
-    //     const unsubscribe = onAuthStateChanged(auth, (user) => {
-    //         if (user) {
-    //             navigate("/");
-    //         }
-    //     });
-    //     return () => unsubscribe();
-    // }, [navigate]);
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                navigate("/dashboard/");
+            }
+        });
+        return () => unsubscribe();
+    }, [navigate]);
 
     // error switching
-    // const handleErrorMessage = (errorCode) => {
-    //     switch (errorCode) {
-    //         case "auth/invalid-email":
-    //             return "Invalid email address format. Please check your email.";
-    //         case "auth/user-disabled":
-    //             return "This account has been disabled. Please contact support.";
-    //         case "auth/user-not-found":
-    //         case "auth/wrong-password":
-    //             return "Invalid email or password. Please try again.";
-    //         case "auth/too-many-requests":
-    //             return "Too many login attempts. Please try again later.";
-    //         case "auth/network-request-failed":
-    //             return "Network error. Please check your internet connection.";
-    //         default:
-    //             return "An unexpected error occurred. Please try again.";
-    //     }
-    // };
+    const handleErrorMessage = (errorCode) => {
+        switch (errorCode) {
+            case "auth/invalid-email":
+                return "Invalid email address format. Please check your email.";
+            case "auth/user-disabled":
+                return "This account has been disabled. Please contact support.";
+            case "auth/user-not-found":
+            case "auth/wrong-password":
+                return "Invalid email or password. Please try again.";
+            case "auth/too-many-requests":
+                return "Too many login attempts. Please try again later.";
+            case "auth/network-request-failed":
+                return "Network error. Please check your internet connection.";
+            default:
+                return "An unexpected error occurred. Please try again.";
+        }
+    };
 
     // handling change function
     const handleChange = (e) => {
@@ -65,27 +65,30 @@ function Signin() {
     // handle submit
 
     const handleSubmit = async (e) => {
-        //     e.preventDefault();
-        //     setLoading(true);
-        //     // error handling
-        //     setError("");
-        //     if (!formData.email.includes("@")) {
-        //         setEmailError(true);
-        //         return;
-        //     } else if (formData.password.length <= 0) {
-        //         setPasswordError(true);
-        //         return;
-        //     }
+        e.preventDefault();
+        setLoading(true);
+        // error handling
+        setError("");
+        if (!formData.email.includes("@")) {
+            setEmailError(true);
+            return;
+        } else if (formData.password.length <= 0) {
+            setPasswordError(true);
+            return;
+        }
 
-        //     try {
-        //         await signInWithEmailAndPassword(auth, formData.email, formData.password);
-        //         navigate("/");
-        //     } catch (error) {
-        //     } finally {
-        //         const customErrMessage = handleErrorMessage(error.code);
-        //         setError(customErrMessage);
-        //         setLoading(false);
-        //     }
+        try {
+            await signInWithEmailAndPassword(auth, formData.email, formData.password);
+            navigate("/dashboard/");
+        } catch (error) {
+            console.log("LOGIN ERROR:", error.code);
+
+            const customErrMessage = handleErrorMessage(error.code);
+            setError(customErrMessage);
+        } finally {
+
+            setLoading(false);
+        }
     };
 
     return (
